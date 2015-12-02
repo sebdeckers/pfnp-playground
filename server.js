@@ -3,7 +3,9 @@ var app = express()
 
 var message = 'How are you today?'
 
-app.get('/', function (req, res) {
+app.use(express.static('public'))
+
+app.get('/motd', function (req, res) {
   res.send(message)
 })
 
