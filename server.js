@@ -6,6 +6,7 @@ var message = 'How are you today?'
 app.use(express.static('public'))
 
 app.get('/motd', function (req, res) {
+  res.header('cache-control', 'no-store');
   res.send(message)
 })
 
